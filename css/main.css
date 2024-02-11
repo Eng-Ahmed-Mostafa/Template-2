@@ -17,8 +17,7 @@
     box-sizing: border-box;
 }
 body {
-    max-width: 100%;
-    display: flex;
+    overflow-x:hidden;
 }
 ul {
     list-style: none;
@@ -306,8 +305,12 @@ p.footer {
     left: 0;
     padding: 60px; 
     overflow-y: auto;
-    overflow-x: visible;
     transition: .3s;
+}
+@media (max-width: 767px) {
+    .main-body {
+        padding: 60px 20px;
+    }
 }
 @media (min-width: 992px) {
     .main-body {
@@ -408,6 +411,7 @@ p.footer {
 /* End Landing */
 /* Start Major */
 .major {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fill , minmax(550px , 1fr));
     gap: 100px;
@@ -419,6 +423,7 @@ p.footer {
 }
 @media (max-width: 767px) {
     .major .box {
+        max-width: 66%;
         align-items: flex-start;
         flex-direction: column;
     }
@@ -442,6 +447,7 @@ p.footer {
     color: var(--main-color);
 }
 .major .box .info {
+    width: 100%;
     max-width: 100%;
 }
 .major .box .info h3 {
